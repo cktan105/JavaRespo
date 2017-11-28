@@ -1,4 +1,4 @@
-public class Member extends Person
+public class Member extends Person implements Comparable<Member>
 {
 	
 	private int memberNumber;
@@ -22,4 +22,12 @@ public class Member extends Person
 		return (memberNumber + " - " + super.toString());
 	}
 	
+	
+	@Override
+	public int compareTo(Member o)
+	{
+		return (this.getMemberNumber() - o.getMemberNumber());
+	}
+
+
 }

@@ -32,20 +32,27 @@ public class Person
 	}	
 
 
-	public String toString()
-	{
-		String fullName = firstName;
-		if (secondName != null)
-		{
-			fullName += " " + secondName;
-		}
-		fullName += " " + surname;
-		return (fullName);
-	}
-	
+//	public String toString()
+//	{
+//		String fullName = firstName;
+//		if (secondName != null)
+//		{
+//			fullName += " " + secondName;
+//		}
+//		fullName += " " + surname;
+//		return (fullName);
+//	}
+
 	
 	public void show()
 	{
 		System.out.println(this);
+	}
+
+
+	@Override
+	public String toString()
+	{
+		return "Name: [" + surname +" "+ firstName + " " + secondName + "]";
 	}
 }

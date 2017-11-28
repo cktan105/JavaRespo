@@ -45,13 +45,14 @@ public class ClubApplication
 		Club club = new Club();
 		
 		
-		Member member1, member2, member3, member4, member5;
+		Member member1, member2, member3, member4, member5, member6;
 		
 		member1 = club.addMember("Einstein", "Albert", null);
 		member2 = club.addMember("Picasso", "Pablo", "Ruiz");
 		member3 = club.addMember("Webber", "Andrew", "Lloyd");
 		member4 = club.addMember("Baggio", "Roberto", null);
-		member5 = club.addMember("Raffles", "Stamford", null);
+		member5 = club.addMember("Raffles", "Stamford", "Blizzard");
+		member6 = club.addMember("Raffles", "Stamford", null);
 		
 		System.out.println("Current Members:");
 		club.showMembers();
@@ -71,18 +72,18 @@ public class ClubApplication
 		club.removeFacility("Toilet");		
 		club.show();
 		
-		try
-		{
-			club.addBooking(4, "Canteen", getDate("01-dec-2017 08:00"), getDate("01-dec-2017 12:00"));
-			club.addBooking(1,"Canteen", getDate("28-Nov-2017 15:00"), getDate("30-nov-2017 15:00"));
-			
-			club.showBookings("Canteen", getDate("01-Jan-2017 00:00"), getDate("31-dec-2017 23:59"));
-		}
-		catch (BadBookingException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try
+//		{
+//			club.addBooking(4, "Canteen", getDate("01-dec-2017 08:00"), getDate("01-dec-2017 12:00"));
+//			club.addBooking(1,"Canteen", getDate("28-Nov-2017 15:00"), getDate("30-nov-2017 15:00"));
+//			
+//			club.showBookings("Canteen", getDate("01-Jan-2017 00:00"), getDate("31-dec-2017 23:59"));
+//		}
+//		catch (BadBookingException e)
+//		{
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		
 		

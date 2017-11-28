@@ -1,7 +1,5 @@
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 public class Club
 {
@@ -81,7 +79,7 @@ public class Club
 			
 			if (m.getMemberNumber() == memberNumber)
 			{
-			
+				
 				members.remove(i);
 				System.out.println(m.toString() + " is removed.");
 				return;
@@ -150,8 +148,14 @@ public class Club
 	
 	public void show()
 	{
+		
 		showFacilities();
 		System.out.println("");
+		
+		// Collections.sort(members);
+		// Collections.reverse(members);
+		
+		Collections.sort(members, new MemberComparator());
 		showMembers();
 	}
 	
@@ -162,7 +166,7 @@ public class Club
 		Member m = this.getMember(memberNumber);
 		Facility f = this.getFacility(facilityName);
 		
-		bookingRegister.addBooking(m, f, startDate, endDate);		
+		bookingRegister.addBooking(m, f, startDate, endDate);
 	}
 	
 	
