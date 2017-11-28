@@ -42,65 +42,64 @@ public class MemberComparator implements Comparator<Member>
 		// return o1.getSecondName().compareTo(o2.getSecondName());
 		// }
 		
+				
+		int result = o1.getSurname().compareTo(o2.getSurname());
+		
+		if (result == 0) // means surname is the same
+		{
+			result = o1.getFirstName().compareTo(o2.getFirstName());
+		}
+		
+		if (result == 0) // means surname and first name is the same
+		{
+			
+			if (o1.getSecondName() == null && o2.getSecondName() == null)
+			{
+				result = 0;
+			}
+			else if (o1.getSecondName() == null || o2.getSecondName() == null)
+			{
+				result = o1.getSecondName() == null ? 1 : -1;
+			}
+			else
+			{
+				result = o1.getSecondName().compareTo(o2.getSecondName());
+			}
+		}
+		
+		return result;
 		
 		
 		
 		// int result = o1.getSurname().compareTo(o2.getSurname());
 		//
-		// if (result == 0) // means surname is the same
+		// if(result != 0) // means surname is not equal
 		// {
-		// result = o1.getFirstName().compareTo(o2.getFirstName());
+		// return result;
 		// }
 		//
-		// if (result == 0) // means surname and first name is the same
-		// {
+		// result = o2.getFirstName().compareTo(o2.getFirstName());
 		//
-		// if (o1.getSecondName() == null && o2.getSecondName() == null)
+		// if(result != 0) // means same surname but different first name
 		// {
-		// result = 0;
+		// return result;
 		// }
-		// else if (o1.getSecondName() == null || o2.getSecondName() == null)
+		//
+		// if(o1.getSecondName() == null && o2.getSecondName() == null) // means same
+		// surname and first name, but both dont have second name
 		// {
-		// result = o1.getSecondName() == null ? 1 : -1;
+		// return 0;
 		// }
-		// else
+		//
+		// if(o1.getSecondName() == null || o2.getSecondName() == null)
 		// {
+		// result = o1.getSecondName() == null? 1:-1;
+		// return result;
+		// }
+		//
 		// result = o1.getSecondName().compareTo(o2.getSecondName());
-		// }
-		// }
 		//
 		// return result;
-		
-		
-		
-		int result = o1.getSurname().compareTo(o2.getSurname());
-		
-		if(result != 0) // means surname is not equal
-		{
-			return result;
-		}
-		
-		result = o2.getFirstName().compareTo(o2.getFirstName());
-		
-		if(result != 0) // means same surname but different first name
-		{
-			return result;			
-		}
-		
-		if(o1.getSecondName() == null && o2.getSecondName() == null) // means same surname and first name, but both dont have second name
-		{
-			return 0;
-		}
-		
-		if(o1.getSecondName() == null || o2.getSecondName() == null)
-		{
-			result = o1.getSecondName() == null? 1:-1;
-			return result;
-		}
-		
-		result = o1.getSecondName().compareTo(o2.getSecondName());
-		
-		return result;
 		
 	}
 	
